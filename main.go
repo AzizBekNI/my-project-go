@@ -6,7 +6,7 @@ import (
 )
 
 func main() {
-	fmt.Println(M, fibo(5))
+	fmt.Println(M)
 	db.Sql1()
 	//db.SayHi()
 	//sql0()
