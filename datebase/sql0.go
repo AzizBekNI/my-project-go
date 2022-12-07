@@ -3,6 +3,7 @@ package datebase
 import (
 	"database/sql"
 	"fmt"
+
 	//"fmt"
 	"log"
 
@@ -39,36 +40,64 @@ func Sql0() {
 	// if err != nil {
 	// 	log.Fatal(err.Error())
 	// }
-	// var (
-	// 	name string
-	// 	password string
-	// 	isActive int
-	// )
-	// fmt.Println("Type name : ")
-	// fmt.Scan(&name)
-	// fmt.Println("Password : ")
-	// fmt.Scan(&password)
-	// fmt.Println("isActive : ")
-	// fmt.Scan(&isActive)
 
-	// res, err := db.Exec("INSERT INTO users(username, password, isActive) VALUES(?,?, ?);", name, password, isActive)
-	// if err != nil {
-	// 	log.Fatal(err.Error())
-	// }
 	//fmt.Println(res.LastInsertId())
 	//fmt.Println(res.RowsAffected())
 	// id, err := res.LastInsertId()
-    // if err != nil {
-    //     panic (err.Error())
-    // }
-    // fmt.Println("id: ", id)
-	// _, err = db.Exec("UPDATE users SET password = 3456 WHERE username = 'Farrux';")
-	// if err != nil{
-	// 	log.Panic(err.Error())
+	// if err != nil {
+	//     panic (err.Error())
 	// }
-	// _, err = db.Exec("DELETE FROM users WHERE username = 'Alloshukr';")
-	// if err != nil{
-	// 	log.Panic(err.Error())
-	// }
-	fmt.Printf("1 User qo'shish \n 2 ")
+	// fmt.Println("id: ", id)
+
+	var a int
+	c := true
+	for c {
+		fmt.Printf("1 User qo'shish \n2 User ma'lumotini yangilash \n3 User ning ma'lumotlarini o'chirish \n")
+		fmt.Scan(&a)
+		if a > 0 && a < 4 {
+			c = false
+		}
+	}
+	switch a {
+	case 1:
+		var (
+			name     string
+			password string
+			isActive int
+		)
+		fmt.Println("Type name : ")
+		fmt.Scan(&name)
+		fmt.Println("Password : ")
+		fmt.Scan(&password)
+		fmt.Println("isActive : ")
+		fmt.Scan(&isActive)
+
+		_, err := db.Exec("INSERT INTO users(username, password, isActive) VALUES(?,?, ?);", name, password, isActive)
+		if err != nil {
+			log.Fatal(err.Error())
+		}
+	case 2:
+		var (
+			username string
+			password int
+		)
+		fmt.Println("Username : ")
+		fmt.Scan(&username)
+		fmt.Println("Password : ")
+		fmt.Scan(&password)
+		_, err = db.Exec("UPDATE users SET password = ? WHERE username = ?;", password, username)
+		if err != nil {
+			log.Panic(err.Error())
+		}
+	case 3:
+		var (
+			username string
+		)
+		fmt.Println("Username : ")
+		fmt.Scan(&username)
+		_, err = db.Exec("DELETE FROM users WHERE username = ?;", username)
+		if err != nil {
+			log.Panic(err.Error())
+		}
+	}
 }
