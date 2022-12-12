@@ -53,8 +53,8 @@ func Sql0() {
 	c := true
 	for c {
 		fmt.Printf("1 User qo'shish \n2 User ma'lumotini yangilash \n3 User ning ma'lumotlarini o'chirish \n")
-		fmt.Scan(&a)
-		if a > 0 && a < 4 {
+		fmt.Scanf("%d", &a)
+		if a > 0 && a < 5 {
 			c = false
 		}
 	}
@@ -98,6 +98,34 @@ func Sql0() {
 		_, err = db.Exec("DELETE FROM users WHERE username = ?;", username)
 		if err != nil {
 			log.Panic(err.Error())
+		}
+	case 4:
+		var (
+			id       int
+			name     string
+			password string
+			isActive int
+			username string
+		)
+		fmt.Scan(&username)
+		res, err := db.Query("SELECT * FROM users WHERE username = ?;", username)
+		if err != nil {
+			log.Panic(err.Error())
+		}
+		//fmt.Println(res.Columns())
+		if res.Next() {
+			for res.Next() {
+				err = res.Scan(&id, &name, &password, &isActive)
+				if err != nil {
+					log.Fatal(err.Error())
+				}
+				
+				//fmt.Println(username)
+				log.Println( id, name, password, isActive)
+			}
+
+		} else {
+			fmt.Println("Bunday user mavjud emas")
 		}
 	}
 }

@@ -1,7 +1,6 @@
 package datebase
 
-import "fmt"
 
-func SayHi() {
-	fmt.Println("hello")
+func SayHi() (string){
+	return "hello"
 }
