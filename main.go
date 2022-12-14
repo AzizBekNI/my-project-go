@@ -1,17 +1,16 @@
 package main
 
 import (
-	//"fmt"
-	"fmt"
-	db "my-project/datebase"
+"fmt"
+db "my-project/db"
 )
 
 func main() {
-	//fmt.Println(M)
-	fmt.Println(db.SayHi())
-	var id int 
-	fmt.Scan(&id)
-	fmt.Println(db.CanPurchase1(id))
-	//db.SayHi()
-	//sql0()
+	var DbName string
+	fmt.Scan(&DbName) 
+	// db.CreateDb(Db_Name)
+	//db.DropDb(DbName)
+	db.SelectTable()
+	db.Update()
+	db.SelectTable()
 }
