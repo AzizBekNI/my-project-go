@@ -11,7 +11,7 @@ func CreateTable(name string){
 		panic(err)
 	}
 	defer db.Close()
-	_, err = db.Exec("CREATE TABLE IF NOT EXISTS kutbxona(id int NOT NULL AUTO_INCREMENT, bookName varchar(45), pressYear int, authore varchar(55), PRIMARY KEY(id), UNIQUE(id));")
+	_, err = db.Exec("CREATE TABLE `product` (`id` int(11) NOT NULL PRIMARY KEY AUTO_INCREMENT,`name` varchar(250) NOT NULL,`price` double NOT NULL,`quantity` int(11) NOT NULL,`status` tinyint(1) NOT NULL ) ENGINE=MyISAM DEFAULT CHARSET=latin1;")
 	if err != nil {
 		panic(err.Error())
 	}
