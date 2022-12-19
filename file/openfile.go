@@ -2,6 +2,7 @@ package file
 
 import (
 	"os"
+	"fmt"
 )
 
 func OpenFile2(fName string){
@@ -10,4 +11,5 @@ func OpenFile2(fName string){
 		panic(err)
 	}
 	defer file.Close()
+	fmt.Fprint(file)
 }

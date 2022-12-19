@@ -25,5 +25,9 @@ if err != nil {
 }
 defer destination.Close()
 isByte, err := io.Copy(destination, sourc)
+err = destination.Sync()
+if err != nil {
+	return 0, err
+}
 return isByte, err
 }
