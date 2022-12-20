@@ -6,8 +6,9 @@ import (
 )
 
 func main() {
-
-	file.Scanner()
+	//file.Seek_()
+	//file.Scanner()
 	//DirRead()
 	//file.Full_Scan()
+	file.Reader_()
 }

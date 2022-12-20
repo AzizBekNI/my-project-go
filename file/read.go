@@ -8,7 +8,9 @@ import(
 func Read(){
 	var fName string
 	fmt.Scanln(&fName)
-	file, err := os. 
+	file, err := os.Open("example.txt")
+	cheak(err)
+	defer file.Close()
 }
 func cheak(e error){
 	if e != nil {
