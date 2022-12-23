@@ -2,13 +2,10 @@ package main
 
 import (
 	//"fmt"
-	file "my-project/file"
+	//js "my-project/json"
 )
 
 func main() {
-	//file.Seek_()
-	//file.Scanner()
-	//DirRead()
-	//file.Full_Scan()
-	file.Reader_()
+	//js.Json()
+	Salom()
 }
