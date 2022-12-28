@@ -1,0 +1,1 @@
+{"Id":1,"FirstName":"Azizbek","Name":{"Family":"Azik","Personal":"Aziz"},"Email":[{"Id":1,"Adress":"namozovazizbek777@gmail.com"},{"Id":2,"Adress":"namozovazizbek@gmail.com"},{"Id":3,"Adress":"namozovazizbek007@gmail.com"}],"Interest":[{"Id":2,"Hobby":"none"},{"Id":4,"Hobby":"none"}]}

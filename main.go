@@ -2,7 +2,7 @@ package main
 
 import (
 	//"fmt"
-	//js "my-project/json"
+	js "my-project/json"
 	//self "my-project/self"
 )
 
@@ -11,4 +11,5 @@ func main() {
 	//Help()
 	//self.GetCoordinate()
 	//Green_Farm()
+	js.Personal()
 }
