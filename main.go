@@ -11,5 +11,6 @@ func main() {
 	//Help()
 	//self.GetCoordinate()
 	//Green_Farm()
-	js.Personal()
+	//js.Personal()
+	js.Csv()
 }

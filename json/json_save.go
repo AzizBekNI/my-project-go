@@ -39,7 +39,7 @@ func GetPersonEmail(p *Person, in int) {
 func writeStart() {
 	WriteMsg( "*----------------------------------*")
 }
-func checkError(err error) {
+func CheckError(err error) {
 	if err != nil {
 		WriteMsg(err.Error())
 		os.Exit(1)
@@ -47,11 +47,11 @@ func checkError(err error) {
 }
 func saveJson(filename string, key interface{}) {
 	outFile, err := os.Create(filename)
-	checkError(err)
+	CheckError(err)
 	defer outFile.Close()
 	encoder := json.NewEncoder(outFile)
 	err = encoder.Encode(key)
-	checkError(err)
+	CheckError(err)
 }
 func Personal() {
 	p := Person{
