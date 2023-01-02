@@ -2,17 +2,9 @@ package main
 
 import (
 	//"fmt"
-	//js "my-project/json"
-	//self "my-project/self"
-	tar "my-project/tar"
+	h "my-project/http"
 )
 
 func main() {
-	//js.Json()
-	//Help()
-	//self.GetCoordinate()
-	//Green_Farm()
-	//js.Personal()
-	//js.Csv()
-	tar.Get_Tar()
+h.Handle()
 }
