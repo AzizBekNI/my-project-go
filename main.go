@@ -6,5 +6,5 @@ import (
 )
 
 func main() {
-h.Handle()
+h.Vazifa()
 }
